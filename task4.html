@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_Task4</title>
+    <style>
+        .container{
+            text-align: center;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid black;
+            padding: 100px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button onclick="show_date()">show date</button>
+        <div id="date_output"></div>
+
+        <br>
+
+        <button onclick="show_Time()">show Time</button>
+        <div id="time_output"></div>
+    </div>
+
+    <script>
+        function show_date()
+        {
+            const todaydate =new Date();
+            const date = `${todaydate.getDate()}/${todaydate.toLocaleString('default', { month: 'long' })}/${todaydate.getFullYear()}`
+            document.getElementById("date_output").innerText = date;
+        }
+
+        function show_Time() {
+            const todaydate = new Date();
+            document.getElementById("time_output").innerText = todaydate.toString();
+        }
+
+
+    </script>
+    
+</body>
+</html>
