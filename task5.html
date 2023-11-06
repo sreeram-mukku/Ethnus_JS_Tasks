@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_Task5</title>
+    <style>
+        form{
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .input-error{
+            border: 1px solid red;
+        }
+        .error-message{
+            border-color: red;
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form >
+        <div>
+            <label for="name">Name</label>&emsp;
+            <input type="text" id="name">
+            <span id="name-error" class="error-message"></span>
+        </div>
+        <br>
+        <div>
+            <label for="email">Email</label>&emsp;
+            <input type="email" id="email">
+            <span id="email-error" class="error-message"></span>
+        </div>
+        <br>
+        <div>
+            <label for="website">Website</label>&emsp;
+            <input type="url" id="website">
+            <span id="website-error" class="error-message"></span>
+        </div>
+        <br>
+        <div>
+            <label for="message">Message</label>&emsp;
+            <textarea type="text" id="message"></textarea>
+            <span id="message-error" class="error-message"></span>
+        </div>
+        <br>
+        <div>
+            <button onclick="Verify()" type="button">Submit</button>
+        </div>
+        
+
+    </form>
+
+    <script>
+        function Verify(){
+            var name = document.getElementById("name");
+            var email = document.getElementById('email');
+            var website = document.getElementById('website');  
+            var message =  document.getElementById('message');
+            
+            var nameError = document.getElementById('name-error');
+            var emailError = document.getElementById('email-error');
+            var websiteError = document.getElementById('website-error');
+            var messageError = document.getElementById('message-error');
+
+            nameError.textContent = "";
+            emailError.textContent = "";
+            websiteError.textContent = "";
+            messageError.textContent = "";
+
+            if (name.value == "") {
+                nameError.textContent = "This field cannout be blank";
+                name.classList.add('input-error');
+            }
+
+            if (email.value == "") {
+                emailError.textContent = "A valid email is required";
+                email.classList.add('input-error');
+            }
+
+            if (website.value == "") {
+                websiteError.textContent = "A valid url is required";
+                website.classList.add('input-error');
+            }
+
+            if (message.value == "") {
+                messageError.textContent = "This field cannout be blank";
+                message.classList.add('input-error');
+            }
+        }
+    </script>
+    
+</body>
+</html>
