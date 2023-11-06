@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_Task1</title>
+</head>
+
+<body>
+    <h1>Java Script Revesing a Number </h1>
+    <div class="number">
+    </div>
+    <div class="reversed_Number"></div>
+</body>
+<script>
+    let number = 32243;
+    let reversed_Number= 0;
+    document.write("The Given number is   "+"<br/>"+ number+"<br/>");
+    console.log("The number is: " + number);
+    
+    while(number>0)
+    {
+        x = number%10;
+        reversed_Number =reversed_Number*10 + x;
+        number = Math.floor(number/10) ;
+    }
+    document.write("The Reversed number is   "+"<br/>"+ reversed_Number);
+    console.log("Reversed: " + reversed_Number);
+</script>
+
+</html>
