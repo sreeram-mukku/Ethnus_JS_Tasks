@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_Task6</title>
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+    <link rel='stylesheet'
+        href='//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
+        <style>
+            button {
+                width: 100%;
+            }
+    
+            h1 {
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-style: italic;
+            }
+    
+            .container {
+                margin-top: -4px;
+                padding: 0%;
+            }
+    
+            h5 {
+                text-align: center;
+            }
+    
+            #fp1 {
+                float: right;
+            }
+        </style>
+</head>
+<body>
+    <div class="container">
+        <form class="well form-horizontal" action=" " method="post" id="contact_form">
+
+            <h1>Instagram</h1>
+            <br />
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input name="first_name" placeholder="User Name" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4 inputGroupContainer">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input name="password" placeholder="Password" class="form-control" type="password">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <button type="submit" class="btn btn-primary">Log in <span
+                            class="glyphicon glyphicon-submit"></span></button>
+                </div>
+            </div>
+
+            <input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox">
+            <label class="form-check-label" for="firstCheckbox">Remeber me</label>
+            &emsp;
+            <a href="JS-Task3.html" id="fp1">Forgot Password?</a>
+
+        </form>
+        <h5>Don't have account! <a href="CSS-Task7.html">Sign Up here. </a></h5>
+    </div>
+
+    <script>
+        document.getElementById('contact_form').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+            var username = document.getElementsByName('first_name')[0].value;
+            var password = document.getElementsByName('password')[0].value;
+    
+            if (username === username && password === username) {
+                alert('Login successful!'); 
+            } else {
+                alert('Invalid username or password.'); 
+            }
+        });
+    </script>
+
+</body>
+</html>
