@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>JavaScript_Task3</title>
+    <style>
+        table{
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            padding: 10px;
+        }
+        h1{
+            text-align: center;
+        }
+        #result{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SIMPLE CALCULATOR</h1>
+        
+            <table style ="border: 1px solid black;">
+
+                <tr>
+                    <td><label for="firstvalue">1st Number:</label></td>
+                    <td><input type="text" id="firstvalue"></td>
+
+                </tr>
+                <tr>
+                    <td><label for="secondvalue">2nd Number:</label></td>
+                    <td><input type="text" id="secondvalue"></td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <button onclick="Multiply()">Multiply</button>
+                        <button onclick="Divide()">Divide</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div id="result"></div>
+                    </td>
+                </tr>
+                
+            </table>
+
+        
+
+
+        <script>
+            function Multiply()
+            {
+                var firstvalue  =parseFloat(document.getElementById("firstvalue").value);
+                var secondvalue =parseFloat(document.getElementById("secondvalue").value);
+                var result =firstvalue * secondvalue;
+                document.getElementById("result").innerHTML ="The Result Is: " + result;
+            }
+
+            function Divide()
+            {
+                var firstvalue  =parseFloat(document.getElementById("firstvalue").value);
+                var secondvalue =parseFloat(document.getElementById("secondvalue").value);
+                var result =firstvalue / secondvalue;
+                document.getElementById("result").innerHTML ="The Result Is: " + result;
+
+            }
+        </script>
+
+</body>
+</html>
