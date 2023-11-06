@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript_Task2</title>
+</head>
+<body>
+    <h1>Java Script of converting the string to Alphabetical Order</h1>
+    <script>
+    
+
+        function Alphabetical_order_string(str)
+        {
+            return str.split('').sort().join('')
+        }
+        let str ="webmaster";
+        document.write("The given string is :  "+str+"<br/>"+"<br/>");
+        
+        console.log(str);
+        console.log(Alphabetical_order_string(str));
+        document.write("The alphabetical ordered string is :"+Alphabetical_order_string(str));
+
+    </script>
+    
+    
+</body>
+</html>
