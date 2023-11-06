@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript_Task8</title>
+        <style>
+            body {
+                padding: 5%;
+            }
+    
+            .ws {
+                text-align: left;
+                width: 45%;
+                padding-left: 30%;
+            }
+    
+            .but {
+                padding-left: 45%;
+            }
+    
+            .li {
+                float: right;
+            }
+    
+            form {
+                padding: 10px;
+                border: 2px solid black;
+            }
+    
+            button {
+                color: white;
+                font-weight: bold;
+                background-color: #f90200;
+                border-radius: 5px;
+                align-items: center;
+            }
+    
+            textarea,
+            select {
+                width: 45%;
+            }
+    
+            .error-message {
+                color: red;
+                font-size: 12px;
+                font-weight: bold;
+            }
+    
+            .input-field-container {
+                position: relative;
+                margin-bottom: 15px;
+            }
+    
+            .input-field-container .input-field {
+                width: calc(100% - 120px);
+                margin-right: 10px;
+            }
+    
+            .input-field-container .error-message {
+                position: absolute;
+                top: 0;
+                right: 0;
+                margin-top: 5px;
+            }
+    
+            h1 {
+                color: blue;
+                font-weight: bolder;
+                text-align: center;
+            }
+    
+            .gradient-background {
+                background: linear-gradient(500deg, #00bfff, #ff4c68, #ef8172 , #e666dd, #fc5185);
+                background-size: 150% 100%;
+                animation: gradient-animation 5s ease infinite;
+            }
+    
+            @keyframes gradient-animation {
+                0% {
+                    background-position: 0% 50%;
+                }
+    
+                50% {
+                    background-position: 100% 50%;
+                }
+    
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <form class="gradient-background">
+            <h1>Registration Form</h1>
+            <div class="ws">
+                <div class="input-field-container">
+                    <label for="firstname">First Name</label>
+                    <input class="input-field" type="text" id="firstname">
+                    <span id="fname-error" class="error-message"></span>
+                </div>
+    
+                <div class="input-field-container">
+                    <label for="lastname">Last Name</label>
+                    <input class="input-field" type="text" id="lastname">
+                    <span id="lname-error" class="error-message"></span>
+                </div>
+    
+                <div class="input-field-container">
+                    <label for="username">Email</label>
+                    <input class="input-field" type="text" id="username">
+                    <span id="email-error" class="error-message"></span>
+                </div>
+    
+                <div class="input-field-container">
+                    <label for="password">Password</label>
+                    <input class="input-field" type="password" id="password">
+                    <span id="password-error" class="error-message"></span>
+                </div>
+    
+                <div class="input-field-container">
+                    <label for="repassword">Re-enter Password</label>
+                    <input class="input-field" type="password" id="repassword">
+                    <span id="rpass-error" class="error-message"></span>
+                </div>
+    
+                <label for="gender">Gender</label>
+                <input type="radio" name="gender" value="male">Male
+                <input type="radio" name="gender" value="female">Female<br><br>
+    
+                <div class="input-field-container">
+                    <label for="age">Age</label>
+                    <input class="input-field" type="number" id="age">
+                    <span id="age-error" class="error-message"></span>
+                </div>
+    
+                <div class="input-field-container">
+                    <label for="phonenumber">Phone Number</label>
+                    <input class="input-field" type="number" id="number">
+                    <span id="pnum-error" class="error-message"></span>
+                </div>
+    
+                <div class="input-field-container">
+                    <label for="address">Address</label>
+                    <textarea class="input-field" id="address"></textarea>
+                    <span id="add-error" class="error-message"></span>
+                </div>
+    
+                <div class="input-field-container">
+                    <label for="state">State</label>
+                    <input class="input-field" type="text" id="state">
+                    <span id="state-error" class="error-message"></span>
+                </div>
+    
+                <label for="country">Country</label>
+                <select name="cou" id="cou">
+                    <option value="India">India</option>
+                    <option value="US">US</option>
+                    <option value="UK">UK</option>
+                </select>
+                <span id="country-error" class="error-message"></span><br><br>
+    
+            </div>
+    
+            <label for="languages">Languages known</label>
+            <input type="checkbox" id="english">
+            <label for="english">English</label>
+            <input type="checkbox" id="kannada">
+            <label for="kannada">Kannada</label>
+            <input type="checkbox" id="hindi">
+            <label for="hindi">Hindi</label>
+            <input type="checkbox" id="telugu">
+            <label for="telugu">Telugu</label><br><br>
+    
+            <input type="checkbox" id="dec">
+            <label for="dec">Here I declare all the given details are true</label><br><br>
+    
+            <div class="li">
+                <label for="login">Login to <a href="https://ethnus.com/">Ethnus</a> website </label><br><br>
+            </div>
+    
+            <div class="but">
+                <button type="button" onclick="validate()">Register</button>
+            </div>
+        </form>
+    
+        <script>
+            function validate() {
+    
+                var fname = document.getElementById("firstname");
+                var lname = document.getElementById('lastname');
+                var email = document.getElementById('username');
+                var password = document.getElementById('password');
+                var rpass = document.getElementById('repassword');
+                var age = document.getElementById('age');
+                var pnum = document.getElementById('number');
+                var add = document.getElementById('address');
+                var state = document.getElementById('state');
+                var country = document.getElementById('cou');
+    
+                var fnameError = document.getElementById('fname-error');
+                var lnameError = document.getElementById('lname-error');
+                var emailError = document.getElementById('email-error');
+                var passwordError = document.getElementById('password-error');
+                var rpassError = document.getElementById('rpass-error');
+                var ageError = document.getElementById('age-error');
+                var pnumError = document.getElementById('pnum-error');
+                var addError = document.getElementById('add-error');
+                var stateError = document.getElementById('state-error');
+                var countryError = document.getElementById('country-error');
+    
+                fnameError.textContent = "";
+                lnameError.textContent = "";
+                emailError.textContent = "";
+                passwordError.textContent = "";
+                rpassError.textContent = "";
+                ageError.textContent = "";
+                pnumError.textContent = "";
+                addError.textContent = "";
+                stateError.textContent = "";
+                countryError.textContent = "";
+    
+                if (fname.value == "") {
+                    fnameError.textContent = "poor";
+                    fname.classList.add('input-error');
+                }
+                if (lname.value == "") {
+                    lnameError.textContent = "poor";
+                    lname.classList.add('input-error');
+                }
+    
+                if (email.value == "") {
+                    emailError.textContent = "poor";
+                    email.classList.add('input-error');
+                }
+    
+                if (password.value == "") {
+                    passwordError.textContent = "poor";
+                    password.classList.add('input-error');
+                }
+    
+                if (rpass.value == "") {
+                    rpassError.textContent = "poor or mismatch";
+                    rpass.classList.add('input-error');
+                }
+    
+                if (age.value == "") {
+                    ageError.textContent = "poor";
+                    age.classList.add('input-error');
+                }
+    
+                if (pnum.value == "") {
+                    pnumError.textContent = "poor";
+                    pnum.classList.add('input-error');
+                }
+    
+                if (add.value == "") {
+                    addError.textContent = "poor";
+                    add.classList.add('input-error');
+                }
+    
+                if (state.value == "") {
+                    stateError.textContent = "poor";
+                    state.classList.add('input-error');
+                }
+    
+                if (country.value == "") {
+                    countryError.textContent = "Please select your country";
+                    country.classList.add('input-error');
+                }
+            }
+        </script>
+    
+    </body>
+</html>
