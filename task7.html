@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript_Task7</title>
+        <style>
+    
+            body{
+                background-color: #74dbef;
+            }
+            .container {
+                text-align: center;
+                margin-top: 50px;
+            }
+    
+            h1 {
+                font-family: Arial, sans-serif;
+                color: white;
+            }
+    
+            img {
+                width: 300px;
+                height: 200px;
+            }
+    
+            button {
+                font-weight: bold;
+                font-size: 16px;
+                margin: 10px;
+            }
+    
+            .container {
+                background-color: #364f6b;
+            }
+    
+            #startButton {
+                background-color: #fc5185;
+                margin: 0;
+                position: absolute;
+                top: 36%;
+                left: 46%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+                color: white;
+            }
+    
+            #stopButton {
+                background-color: #fc5185;
+                color: white;
+                margin: 0;
+                position: absolute;
+                top: 36%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+            #reset{
+                background-color: #fc5185;
+                color: white;
+                margin: 0;
+                position: absolute;
+                top: 36%;
+                left: 54%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+    
+            h2{
+                text-align: center;
+                color: #364f6b;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Train GIF Animation</h1>
+            <img id="trainGif" src="train.gif" alt="Train GIF">
+        </div>
+        <h2>Click the following buttons to handle animation</h2>
+        <button id="startButton">Start</button>
+        <button id="stopButton">Stop</button>
+        <button id="reset">Reset</button>
+        <script>
+    
+            let animationInterval;
+            let position = 0;
+    
+            document.getElementById('startButton').addEventListener('click', function () {
+                const trainGif = document.getElementById('trainGif');
+                trainGif.style.display = 'block';
+    
+                if (!animationInterval) {
+                    animationInterval = setInterval(() => {
+                        position += 2;
+                        trainGif.style.marginLeft = position + 'px';
+                    }, 100);
+                }
+            });
+    
+            document.getElementById('stopButton').addEventListener('click', function () {
+                clearInterval(animationInterval);
+                animationInterval = null;
+            });
+    
+                document.getElementById('reset').addEventListener('click', function () {
+                    clearInterval(animationInterval);
+                    animationInterval = null;
+                    const trainGif = document.getElementById('trainGif');
+                    position = 0;
+                    trainGif.style.marginLeft = position + 'px';
+                })
+        </script>
+    </body>
+</html>
